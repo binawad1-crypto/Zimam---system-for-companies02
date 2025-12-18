@@ -1,5 +1,7 @@
 
+// @ts-ignore
 import { initializeApp } from "firebase/app";
+// @ts-ignore
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
@@ -13,6 +15,11 @@ const firebaseConfig = {
   measurementId: "G-T6R5SLD8SC"
 };
 
+// Initialize Firebase app first
 const app = initializeApp(firebaseConfig);
+
+// Initialize Auth specifically for this app instance
+// The import of getAuth from GStatic ensures the component is registered
 export const auth = getAuth(app);
+
 export default app;
